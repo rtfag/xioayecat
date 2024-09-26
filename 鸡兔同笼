@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+  double head,foot,pointh,pointf;
+  int rabit,chick;
+  //获取数据并做'错误数据判断前预处理'
+  printf("请输入头数:");
+  scanf("%lf",&head);
+  int integerh = head //获取整数部分;
+  pointh = head - integerh; //获取小数部分
+  printf("请输入脚数:");
+  scanf("%lf",&foot);
+  int integerf = foot;
+  pointf = foot - integerf;
+  //除去负数，小数，奇数脚，头数四倍<腿数<头数两倍
+  if(head<0 || foot<0 || pointh>0 || pointf>0 || integerf%2==1 || head*2>foot || head*4<foot)
+    printf("您输入的数据不合理");
+  else //计算答案
+    {
+    rabit = (integerf - integerh*2)/2;
+    chick = integerh - rabit;
+    printf("鸡个数为%d\n兔个数为%d",chick,rabit); 
+    }
+  return 0;
+}

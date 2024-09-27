@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main()
+{
+    int change = 0;
+    int group[10] = {1,5,4,3,7,2,9,8,6,0};
+    for(int i=0;i<9;i++)//排序次数
+    {
+        for(int j=0;j<9-i;j++)//循环比较
+        {
+            if(group[j]>group[j+1])//交换顺序
+            {   
+                change = group[j];
+                group[j] = group[j+1];
+                group[j+1] = change;
+            }
+        }
+        
+    }
+    for(int i=0;i<10;i++ )
+        printf("%d\t",group[i]);
+    return 0;
+}
